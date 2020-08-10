@@ -26,7 +26,7 @@ func main() {
 
 // ---- readfunc
 func scanInit() {
-	const cap = 200 * 1024 // default=64*
+	const cap = 200 * 1024 // default=64*1024
 	var buf = make([]byte, cap)
 	sc.Buffer(buf, cap)
 	sc.Split(bufio.ScanWords)
