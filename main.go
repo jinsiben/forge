@@ -126,4 +126,18 @@ func downloader(baseurl string, tag string) {
 		bodystr = bodystr[startIdx:]
 	}
 
+	// 規定数に足りない分だけinputファイルを追加
+	minfilenum := 5 // 最低inputファイル数
+	for i := sicnt; i < minfilenum; i++ {
+		// ファイル作成(inputN.txt)
+		filenamestr := fmt.Sprintf("./%s/input%d.txt", tag, i+1)
+		fp, err := os.Create(filenamestr)
+		if err != nil {
+			fmt.Println(err)
+			return
+		}
+		defer fp.Close()
+		fp.WriteString("")
+	}
+	fmt.Println("Sample Input File Num: ", minfilenum)
 }

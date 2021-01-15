@@ -7,8 +7,6 @@ import (
 	"strconv"
 )
 
-var sc = bufio.NewScanner(os.Stdin)
-
 func main() {
 	scanInit()
 
@@ -25,6 +23,8 @@ func main() {
 }
 
 // ---- readfunc
+var sc = bufio.NewScanner(os.Stdin)
+
 func scanInit() {
 	const cap = 200 * 1024 // default=64*1024
 	var buf = make([]byte, cap)
